@@ -12,16 +12,61 @@ void main() async {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
 
-  // This widget is the root of your application.
+  final String title;
+
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(),
-      home: const MyHomePage(title: 'HOME AUTOMATION'),
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  Widget _buildCard(int index) {
+    // Placeholder data for the cards (You can replace this with your own data)
+    List<String> images = [
+      'assets/light_black.jpg',
+      'assets/fan_black.jpg',
+      'assets/thermometer.webp',
+      'assets/flame_black.jpg',
+      'assets/gas_black.jpg',
+      'assets/1.jpg',
+    ];
+    List<String> headings = [
+      'Lights',
+      'Fans',
+      'DHT22 Sensor',
+      'Flame Sensor',
+      'Gas Sensor',
+      'PIR Sensor',
+    ];
+    List<String> subheadings = [
+      'Total Number : 1',
+      'Total Number : 2',
+      'Total Number : 3',
+      'Total Number : 4',
+      'Total Number : 5',
+      'Total Number : 6',
+    ];
+
+    return Card(
+      elevation: 4,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(images[index], height: 80, width: 100),
+          SizedBox(height: 10),
+          Text(
+            headings[index],
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(height: 5),
+          Text(subheadings[index]),
+          SizedBox(height: 10),
+        ],
+      ),
     );
   }
 }
