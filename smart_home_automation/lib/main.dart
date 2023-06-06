@@ -22,6 +22,50 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  List<String> images = [
+    "assets/1.jpg",
+    "assets/2.jpg",
+    "assets/2.jpg",
+  ];
+  int _currentIndex = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white,
+          centerTitle: true,
+          title: Text(
+            widget.title,
+            style: AppTheme.myGlobalTextStyle,
+          ),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.notifications_active,
+                  color: Color(0xFF7a6bbc)),
+              tooltip: 'Notifications',
+              onPressed: () {},
+            ), //IconButton
+            //IconButton
+          ],
+          leading: IconButton(
+            icon: const Icon(
+              Icons.menu,
+              color: Color(0xFF7a6bbc),
+            ),
+            tooltip: 'Home',
+            onPressed: () {},
+          )),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[],
+        ),
+      ),
+    );
+  }
+
   Widget _buildCard(int index) {
     // Placeholder data for the cards (You can replace this with your own data)
     List<String> images = [
