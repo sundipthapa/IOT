@@ -127,6 +127,153 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ],
             ),
+            Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(12.0),
+                  child: Center(
+                    child: Wrap(
+                      spacing: 8.0,
+                      runSpacing: 10.0,
+                      children: [
+                        SizedBox(
+                          width: 106.0,
+                          height: 100.0,
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => LightControlPage(),
+                                ),
+                              );
+                            },
+                            child: Card(
+                              color: Color(0xFF7a6bbc),
+                              elevation: 2.0,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8.0)),
+                              child: Center(
+                                child: Padding(
+                                  padding: EdgeInsets.all(5.0),
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        'assets/bulb.png',
+                                        width: 40.0,
+                                        height: 40.0,
+                                      ),
+                                      SizedBox(
+                                        height: 4.0,
+                                      ),
+                                      Text(
+                                        "Lights",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 14,
+                                            color: Colors.white),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 106.0,
+                          height: 100.0,
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => FanControl(),
+                                ),
+                              );
+                            },
+                            child: Card(
+                              color: Color(0xFF7a6bbc),
+                              elevation: 2.0,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8.0)),
+                              child: Center(
+                                child: Padding(
+                                  padding: EdgeInsets.all(5.0),
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        'assets/fan.png',
+                                        width: 40.0,
+                                        height: 40.0,
+                                      ),
+                                      SizedBox(
+                                        height: 4.0,
+                                      ),
+                                      Text(
+                                        "Fan",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 14,
+                                            color: Colors.white),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 106.0,
+                          height: 100.0,
+                          child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (_) => SensorControl(),
+                                ),
+                              );
+                            },
+                            child: Card(
+                              color: Color(0xFF7a6bbc),
+                              elevation: 2.0,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8.0)),
+                              child: Center(
+                                child: Padding(
+                                  padding: EdgeInsets.all(5.0),
+                                  child: Column(
+                                    children: [
+                                      Image.asset(
+                                        'assets/sensor1.png',
+                                        width: 40.0,
+                                        height: 40.0,
+                                      ),
+                                      SizedBox(
+                                        height: 4.0,
+                                      ),
+                                      Text(
+                                        "Sensors",
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 14,
+                                            color: Colors.white),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                )
+              ],
+            ),
           ],
         ),
       ),
