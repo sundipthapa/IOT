@@ -44,3 +44,25 @@ class NotificationService {
       FilePathAndroidBitmap(smallpicture),
       largeIcon: FilePathAndroidBitmap(bigpicture),
     );
+    final id = DateTime.now().millisecondsSinceEpoch ~/ 1000;
+    final NotificationDetails notificationDetails = NotificationDetails(
+        android: AndroidNotificationDetails("myapp", "myapp channel",
+            channelDescription: "Channel Description",
+            importance: Importance.max,
+            priority: Priority.high,
+            styleInformation: styleinformationDesign),
+        iOS: DarwinNotificationDetails());
+    _notificationsPlugin.show(id, title, body, notificationDetails,
+        payload: payload);
+  }
+
+  static Future<String> getImageFilePathFromAssets(
+      String asset, String filename) async {
+    final byteData = await rootBundle.load(asset);
+    final temp_direactory = await getTemporaryDirectory();
+    final file = File('${temp_direactory.path}/$filename');
+    await file.writeAsBytes(byteData.buffer
+        .asUint8List(byteData.offsetInBytes, byteData.lengthInBytes));
+
+    return file.path;
+  }
