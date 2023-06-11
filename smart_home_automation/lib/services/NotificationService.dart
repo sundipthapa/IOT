@@ -30,3 +30,17 @@ class NotificationService {
       print(response.payload);
     }
   }
+  static Future<void> display(
+      String title, String body, String payload, BuildContext _context) async {
+    context = _context;
+
+    // if image from asset
+    final bigpicture =
+    await getImageFilePathFromAssets('images/logo.png', 'bigpicture');
+    final smallpicture =
+    await getImageFilePathFromAssets('images/logo.png', 'smallpicture');
+
+    final styleinformationDesign = BigPictureStyleInformation(
+      FilePathAndroidBitmap(smallpicture),
+      largeIcon: FilePathAndroidBitmap(bigpicture),
+    );
