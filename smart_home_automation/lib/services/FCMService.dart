@@ -14,4 +14,13 @@ class FCMService {
       'notification': notification,
     });
   }
+
+  static String makePayLoadWithTopic(String? topic, Map<String, dynamic> data,
+      Map<String, dynamic> notification) {
+    return jsonEncode({
+      'topic': topic,
+      'data': data,
+      'notification': notification,
+    });
+  }
 }
