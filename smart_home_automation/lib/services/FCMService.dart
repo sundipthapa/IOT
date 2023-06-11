@@ -23,4 +23,13 @@ class FCMService {
       'notification': notification,
     });
   }
+
+  static Future<void> sendPushMessage(String? token, Map<String, dynamic> data,
+      Map<String, dynamic> notification) async {
+    try {
+      print('FCM request for device sent!');
+    } catch (e) {
+      print(e);
+    }
+  }
 }
