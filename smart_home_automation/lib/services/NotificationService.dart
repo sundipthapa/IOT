@@ -22,3 +22,11 @@ class NotificationService {
     _notificationsPlugin.initialize(initializationSettings,
         onDidReceiveNotificationResponse: onDidReceiveNotificationResponse);
   }
+  static BuildContext? context;
+
+  static void onDidReceiveNotificationResponse(NotificationResponse response) {
+    if (response != null && response.payload != null) {
+      Navigator.of(context!).pushNamed(response.payload.toString());
+      print(response.payload);
+    }
+  }
