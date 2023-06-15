@@ -274,6 +274,21 @@ class _MyHomePageState extends State<MyHomePage> {
                 )
               ],
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: GridView.builder(
+                shrinkWrap: true,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, // Two cards per row
+                  crossAxisSpacing: 10.0,
+                  mainAxisSpacing: 10.0,
+                ),
+                itemCount: 6,
+                itemBuilder: (context, index) {
+                  return _buildCard(index);
+                },
+              ),
+            ),
           ],
         ),
       ),
