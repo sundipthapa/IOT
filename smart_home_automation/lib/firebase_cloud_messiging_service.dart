@@ -39,4 +39,21 @@ class FCMService {
       print(e);
     }
   }
+
+   static Future<void> sendPushMessage(String? token, Map<String, dynamic> data,
+      Map<String, dynamic> notification) async {
+    try {
+      await http.post(
+        Uri.parse('https://fcm.googleapis.com/fcm/send'),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+          'Authorization': 'key=$FCMAPI'
+        },
+        body: makePayLoadWithToken(token, data, notification),
+      );
+      print('FCM request for device sent!');
+    } catch (e) {
+      print(e);
+    }
+  }
 }
