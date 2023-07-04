@@ -269,3 +269,62 @@ class _SensorControlState extends State<SensorControl> {
       SizedBox(
       height: 20,
       ),
+        Card(
+          elevation: 2,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+          child: Column(children: [
+            Center(
+              child: Text(
+                "Temperature and Humidity",
+                style: TextStyle(
+                    color: Color(0xFF7a6bbc),
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 6.0, right: 6),
+              child: Expanded(
+                child: GridView.count(
+                  crossAxisCount: 2,
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  children: [
+                    IndicatorItem(
+                      icon: Icons.thermostat_outlined,
+                      iconColor: Colors.deepPurple.shade100,
+                      title: 'Temperature',
+                      percent: temperature,
+                      progressColor: Colors.deepPurple,
+                      backgroundColor: Colors.deepPurple.shade100,
+                      radius: 50,
+                      lineWidth: 10,
+                      circularStrokeCap: CircularStrokeCap.round,
+                      center: Text("${temperature.toStringAsFixed(2)}",
+                          style: TextStyle(fontSize: 14)),
+                    ),
+                    IndicatorItem(
+                      icon: Icons.water_drop_outlined,
+                      iconColor: Colors.green.shade100,
+                      title: 'Humidity',
+                      percent: humidity,
+                      progressColor: Colors.green,
+                      backgroundColor: Colors.green.shade100,
+                      radius: 50,
+                      lineWidth: 10,
+                      circularStrokeCap: CircularStrokeCap.round,
+                      center: Text("${humidity.toStringAsFixed(2)}",
+                          style: TextStyle(fontSize: 14)),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ]),
+        )
+      ],
+      ));
+    }
+  }
