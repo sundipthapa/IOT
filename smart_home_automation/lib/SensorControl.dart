@@ -128,3 +128,31 @@ class _SensorControlState extends State<SensorControl> {
           notification: message.notification!, buildContext: context);
       // print('Foreground Notification Received: ${message.notification?.title}');
     });
+
+    Future<void> _sendPushNotification(String alertType) async {
+      String? token = await _firebaseMessaging.getToken();
+      String title = '';
+      String body = '';
+
+      if (alertType == 'gas') {
+        title = 'Gas Alert';
+        body = 'Gas value is 0';
+      } else if (alertType == 'flame') {
+        title = 'Flame Alert';
+        body = 'Flame value is 0';
+      }
+
+      await FCMService.sendPushMessage(
+        token,
+        {},
+        {
+          'title': title,
+          'body': body,
+        },
+      );
+
+      final notificationCount =
+      Provider.of<NotificationCount>(context, listen: false);
+      // Update the notification count
+      notificationCount.updateCount(notificationCount.count + 1);
+    }
