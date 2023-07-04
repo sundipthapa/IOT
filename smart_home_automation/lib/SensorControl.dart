@@ -328,3 +328,27 @@ class _SensorControlState extends State<SensorControl> {
       ));
     }
   }
+  class IndicatorItem extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final double percent;
+  final Color progressColor;
+  final Color backgroundColor;
+  final double radius;
+  final double lineWidth;
+  final CircularStrokeCap circularStrokeCap;
+  final Widget center;
+  final Color iconColor;
+
+  IndicatorItem({
+  required this.icon,
+  required this.title,
+  required this.percent,
+  required this.progressColor,
+  required this.backgroundColor,
+  required this.radius,
+  required this.lineWidth,
+  required this.circularStrokeCap,
+  required this.center,
+  required this.iconColor,
+  });
