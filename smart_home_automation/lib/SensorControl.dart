@@ -352,3 +352,39 @@ class _SensorControlState extends State<SensorControl> {
   required this.center,
   required this.iconColor,
   });
+
+  @override
+  Widget build(BuildContext context) {
+  return Card(
+  child: Padding(
+  padding: const EdgeInsets.all(3.0),
+  child: Column(
+  mainAxisAlignment: MainAxisAlignment.center,
+  children: [
+  // SizedBox(height: 3.0),
+  CircularPercentIndicator(
+  radius: radius,
+  lineWidth: lineWidth,
+  percent: percent,
+  progressColor: progressColor,
+  backgroundColor: backgroundColor,
+  circularStrokeCap: circularStrokeCap,
+  center: center,
+  ),
+  ListTile(
+  minLeadingWidth: 2,
+  leading: Icon(
+  icon,
+  color: iconColor,
+  ),
+  title: Text(
+  title,
+  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+  ),
+  ),
+  ],
+  ),
+  ),
+  );
+  }
+  }
