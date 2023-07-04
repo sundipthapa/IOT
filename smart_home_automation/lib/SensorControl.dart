@@ -182,3 +182,56 @@ class _SensorControlState extends State<SensorControl> {
       );
       },
       )),
+      body: ListView(
+      shrinkWrap: true,
+      children: [
+      Padding(
+      padding: const EdgeInsets.all(18.0),
+      child: Card(
+      elevation: 2,
+      shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(10.0),
+      ),
+      child: Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+      SizedBox(
+      height: 20,
+      ),
+      Text(
+      "Flame and Gas Alert",
+      textAlign: TextAlign.start,
+      style: TextStyle(
+      color: Color(0xFF7a6bbc),
+      fontWeight: FontWeight.bold,
+      fontSize: 16),
+      ),
+      Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+      Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: CircleAvatar(
+      radius: 50,
+      backgroundColor:
+      flame == 0 ? Colors.red : Colors.green,
+      child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+      Icon(
+      Icons.fireplace_outlined,
+      size: 40,
+      color: Colors.white,
+      ),
+      Text(
+      'Flame $flame',
+      style: TextStyle(
+      fontSize: 18,
+      fontWeight: FontWeight.bold,
+      color: Colors.white,
+      ),
+      ),
+      ],
+      ),
+      ),
+      ),
