@@ -32,3 +32,19 @@ class SensorControl extends StatefulWidget {
   @override
   State<SensorControl> createState() => _SensorControlState();
 }
+class _SensorControlState extends State<SensorControl> {
+  final FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance;
+  late DatabaseReference _databaseReference;
+  double humidity = 0.0;
+  double temperature = 0.0;
+  int gas = 0;
+  int flame = 0;
+  double soil = 0.0;
+
+  @override
+  void initState() {
+    super.initState();
+    _databaseReference = FirebaseDatabase.instance.reference();
+    _listenToSensorValues();
+    _configureFirebaseMessaging();
+  }
