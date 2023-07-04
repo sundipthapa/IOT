@@ -63,3 +63,34 @@ class _SensorControlState extends State<SensorControl> {
         print('Humidity: $humidity');
       }
     });
+    _databaseReference
+        .child('SensorData')
+        .child('temperature')
+        .onValue
+        .listen((event) {
+      final temperatureValue = event.snapshot.value as double?;
+      if (temperatureValue != null) {
+        setState(() {
+          temperature = temperatureValue / 100.0;
+        });
+      }
+    });
+
+    _databaseReference
+        .child('SensorData')
+        .child('gasSensor')
+        .onValue
+        .listen((event) {
+      final gasValue = event.snapshot.value as int?;
+      if (gasValue != null) {
+        setState(() {
+          // gas = ((gasValue - 100) / (300 - 100)) * 100.0;
+          gas = gasValue;
+        });
+        print('GasValue: $gas');
+        if (gas >= 500) {
+          // Send push notification
+          _sendPushNotification("gas");
+        }
+      }
+    });
