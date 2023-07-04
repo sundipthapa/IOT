@@ -94,3 +94,37 @@ class _SensorControlState extends State<SensorControl> {
         }
       }
     });
+
+
+    _databaseReference
+        .child('SensorData')
+        .child('soilMoisture')
+        .onValue
+        .listen((event) {
+      final moistureValue = event.snapshot.value as double?;
+      if (moistureValue != null) {
+        setState(() {
+          soil = moistureValue / 100.0;
+        });
+      }
+    });
+  }
+
+  void _configureFirebaseMessaging() {
+    _firebaseMessaging.requestPermission();
+    _firebaseMessaging.getToken().then((token) {
+      print('FCM Token: $token');
+      // Send this token to your server to associate it with the device
+    });
+
+    FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      // Handle foreground notification messages here
+      if (message.notification != null) {
+        print(message.notification!.body);
+        print(message.notification!.title);
+      }
+
+      NotificationService.displayFcm(
+          notification: message.notification!, buildContext: context);
+      // print('Foreground Notification Received: ${message.notification?.title}');
+    });
