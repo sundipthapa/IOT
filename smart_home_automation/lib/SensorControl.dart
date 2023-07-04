@@ -48,3 +48,18 @@ class _SensorControlState extends State<SensorControl> {
     _listenToSensorValues();
     _configureFirebaseMessaging();
   }
+
+  void _listenToSensorValues() {
+    _databaseReference
+        .child('SensorData')
+        .child('humidity')
+        .onValue
+        .listen((event) {
+      final humidityValue = event.snapshot.value as double?;
+      if (humidityValue != null) {
+        setState(() {
+          humidity = humidityValue / 100.0;
+        });
+        print('Humidity: $humidity');
+      }
+    });
