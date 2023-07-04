@@ -235,3 +235,37 @@ class _SensorControlState extends State<SensorControl> {
       ),
       ),
       ),
+        Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: CircleAvatar(
+            radius: 50,
+            backgroundColor:
+            gas >= 600 ? Colors.red : Colors.green,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.gas_meter_outlined,
+                  size: 40,
+                  color: Colors.white,
+                ),
+                Text(
+                  'Gas $gas',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+      ),
+      ]),
+      ),
+      ),
+      SizedBox(
+      height: 20,
+      ),
