@@ -156,3 +156,29 @@ class _SensorControlState extends State<SensorControl> {
       // Update the notification count
       notificationCount.updateCount(notificationCount.count + 1);
     }
+    @override
+    Widget build(BuildContext context) {
+      return Scaffold(
+          appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.white,
+          centerTitle: true,
+          title: Text(
+          'SENSORS CONTROL',
+          style: AppTheme.myGlobalTextStyle,
+      ),
+      leading: IconButton(
+      icon: const Icon(
+      Icons.arrow_back,
+      color: Color(0xFF7a6bbc),
+      ),
+      tooltip: 'Home',
+      onPressed: () {
+      Navigator.push(
+      context,
+      MaterialPageRoute(
+      builder: (context) =>
+      MyHomePage(title: "HOME AUTOMATION")),
+      );
+      },
+      )),
