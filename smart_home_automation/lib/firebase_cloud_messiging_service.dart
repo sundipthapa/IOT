@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
 
 class FCMService {
@@ -14,7 +13,7 @@ class FCMService {
     });
   }
 
-    static String makePayLoadWithTopic(String? topic, Map<String, dynamic> data,
+  static String makePayLoadWithTopic(String? topic, Map<String, dynamic> data,
       Map<String, dynamic> notification) {
     return jsonEncode({
       'topic': topic,
@@ -40,7 +39,7 @@ class FCMService {
     }
   }
 
-   static Future<void> sendPushMessage(String? token, Map<String, dynamic> data,
+  static Future<void> sendPushMessage(String? token, Map<String, dynamic> data,
       Map<String, dynamic> notification) async {
     try {
       await http.post(
