@@ -64,6 +64,36 @@ class _LightControlPageState extends State<LightControlPage> {
           },
         ),
       ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          SizedBox(
+            width: 100.0,
+            height: 200.0,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "assets/lights.jpeg",
+                  height: 150.0,
+                  width: 100.0,
+                  fit: BoxFit.cover,
+                ),
+                SizedBox(height: 18.0),
+                Text(
+                  "Lights",
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                    color: Color(0xFF7a6bbc),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
