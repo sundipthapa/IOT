@@ -36,4 +36,34 @@ class _LightControlPageState extends State<LightControlPage> {
         .child('MeetingLightStatus');
     databaseReference.set(status);
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        centerTitle: true,
+        title: Text(
+          'Light Control',
+          style: AppTheme.myGlobalTextStyle,
+        ),
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Color(0xFF7a6bbc),
+          ),
+          tooltip: 'Home',
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => MyHomePage(title: "HOME AUTOMATION"),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
 }
