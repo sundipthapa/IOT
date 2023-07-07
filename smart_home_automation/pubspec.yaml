@@ -43,8 +43,11 @@ dependencies:
   firebase_core: ^2.14.0
   firebase_database: ^10.2.3
   firebase_messaging: ^14.6.5
-    http: ^0.13.5q1
-    flutter_local_notifications: ^15.1.0+1
+  http: ^0.13.5q1
+  flutter_local_notifications: ^15.1.0+1
+  font_awesome_flutter: ^10.4.0
+  badges: ^3.1.1
+  provider: ^6.0.5
 
 dev_dependencies:
   flutter_test:
