@@ -42,6 +42,9 @@ dependencies:
   percent_indicator: ^4.2.3
   firebase_core: ^2.14.0
   firebase_database: ^10.2.3
+  firebase_messaging: ^14.6.5
+    http: ^0.13.5q1
+    flutter_local_notifications: ^15.1.0+1
 
 dev_dependencies:
   flutter_test:
