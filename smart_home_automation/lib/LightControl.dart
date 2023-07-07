@@ -92,6 +92,41 @@ class _LightControlPageState extends State<LightControlPage> {
               ],
             ),
           ),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+            child: Wrap(
+              alignment: WrapAlignment.spaceAround,
+              spacing: 10.0,
+              runSpacing: 10.0,
+              children: [
+                LightControlCard(
+                  lightName: "Kitchen Light",
+                  lightIcon: Icons.lightbulb_sharp,
+                  lightStatus: kitchenLightOn,
+                  onTap: () {
+                    setState(() {
+                      kitchenLightOn = !kitchenLightOn;
+                    });
+
+                    kitchenLight = kitchenLightOn ? 'ON' : 'OFF';
+                    sendKitchenLightStatusToFirebase(kitchenLight);
+                  },
+                ),
+                LightControlCard(
+                  lightName: "Meeting Light",
+                  lightIcon: Icons.lightbulb_sharp,
+                  lightStatus: meetingLightOn,
+                  onTap: () {
+                    setState(() {
+                      meetingLightOn = !meetingLightOn;
+                    });
+                    meetingLight = meetingLightOn ? 'ON' : 'OFF';
+                    sendMeetingLightSatusToFirebase(meetingLight);
+                  },
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );
