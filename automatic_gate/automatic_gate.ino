@@ -109,45 +109,7 @@ void loop() {
 
 
 
-  // Initialize the Serial communication for debugging (optional)
-  Serial.begin(9600);
-}
 
-void loop() {
-  // Read the distance from the ultrasonic sensor
-  int distance = sonar.ping_cm();
-
-  // Check if the distance reading is valid (non-zero)
-  if (distance > 0) {
-    // Calculate the water level from the bottom of the tank
-    int waterLevel = MAX_DISTANCE - distance;
-    Serial.println(waterLevel);
-
-    // Read flame sensor value
-    int flameValue = digitalRead(flamePin);
-
-    // Read gas sensor value
-    int gasValue = analogRead(mq2Pin);
-
-    // Clear the LCD display
-    lcd.clear();
-
-    // Print the water level on the LCD display
-    lcd.setCursor(0, 0);
-    lcd.print("Water Level:");
-    lcd.setCursor(0, 1);
-    lcd.print(waterLevel);
-    lcd.print(" cm");
-
-    // Check if the water level is below the low level threshold
-    if (waterLevel < LOW_LEVEL_THRESHOLD) {
-      // Turn on the water pump
-      digitalWrite(PUMP_PIN, HIGH);
-
-      // Print the pump status on the LCD display
-      lcd.setCursor(0, 1);
-      lcd.print("Pump: ON (Low Level)");
-    }
     // Check if the water level is above the high level threshold
     else if (waterLevel > HIGH_LEVEL_THRESHOLD) {
       // Turn off the water pump
