@@ -110,24 +110,7 @@ void loop() {
 
 
 
-    // Check if the water level is above the high level threshold
-    else if (waterLevel > HIGH_LEVEL_THRESHOLD) {
-      // Turn off the water pump
-      digitalWrite(PUMP_PIN, LOW);
-
-      // Print the pump status on the LCD display
-      lcd.setCursor(0, 1);
-      lcd.print("Pump: OFF (High Level)");
-    }
-    else {
-      // If the water level is within the acceptable range, turn off the pump
-      digitalWrite(PUMP_PIN, LOW);
-
-      // Print the system status on the LCD display
-      lcd.setCursor(0, 1);
-      lcd.print("System: Idle (Acceptable)");
-    }
-
+  
     // Check for flame or gas detection
     if (flameValue == LOW || gasValue > 200) {
       // Display warning message
