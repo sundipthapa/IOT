@@ -111,26 +111,4 @@ void loop() {
 
 
   
-    // Check for flame or gas detection
-    if (flameValue == LOW || gasValue > 200) {
-      // Display warning message
-      lcd.clear();
-      lcd.setCursor(0, 0);
-      lcd.print("Warning: Flame or Gas");
-      lcd.setCursor(0, 1);
-      lcd.print("Detected!");
-
-      Serial.println("Warning: Flame or Gas detected!");
-
-      // Generate a sound with the buzzer
-//      tone(buzzerPin, 1000);
-      digitalWrite(buzzerPin, HIGH);
-      delay(4000); // Sound duration
-//      noTone(buzzerPin);
-      digitalWrite(buzzerPin, LOW);
-//      delay(500); // Delay between detections
-    }
-  }
-
-  delay(500); // Adjust the delay time as needed
-}
+  
