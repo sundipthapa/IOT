@@ -1,6 +1,6 @@
 #include <Servo.h>
 
-// IR Sensor 
+// IR Sensor and Servo Declarations
 Servo servo1;
 Servo servo2;
 int sensor1_pin = 4;
