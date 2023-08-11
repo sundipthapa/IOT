@@ -115,4 +115,15 @@ class WaterPumpControlCard extends StatelessWidget {
     required this.pumpStatus,
     required this.onTap,
   });
-
+ @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 150.0,
+      height: 200.0,
+      child: Card(
+        color: Color(0xFF7a6bbc),
+        elevation: 2.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8.0),
+        ),
+       
