@@ -83,7 +83,19 @@ class _WaterPumpControlPageState extends State<WaterPumpControlPage> {
               spacing: 10.0,
               runSpacing: 10.0,
               children: [
-                
+                WaterPumpControlCard(
+                  pumpName: "Water Pump",
+                  pumpIcon: FontAwesomeIcons.tint,
+                  pumpStatus: waterPumpOn,
+                  onTap: () {
+                    setState(() {
+                      waterPumpOn = !waterPumpOn;
+                    });
+                    waterPump = waterPumpOn ? 'ON' : 'OFF';
+                    sendWaterPumpStatusToFirebase(waterPump);
+                    print(waterPump);
+                  },
+                ),
               ],
             ),
           ),
