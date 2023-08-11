@@ -28,3 +28,10 @@ class _LightControlPageState extends State<LightControlPage> {
         .child('KitchenLightStatus');
     databaseReference.set(status);
   }
+  void sendMeetingLightSatusToFirebase(String status) {
+    DatabaseReference databaseReference = FirebaseDatabase.instance
+        .reference()
+        .child('LightControl')
+        .child('MeetingLightStatus');
+    databaseReference.set(status);
+  }
