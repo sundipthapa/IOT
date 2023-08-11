@@ -105,4 +105,16 @@ class _FanControlPageState extends State<FanControlPage> {
     );
   }
 }
-
+class FanControlCard extends StatelessWidget {
+  final String fanName;
+  final IconData fanIcon;
+  final bool fanStatus;
+  final VoidCallback onTap;
+  const FanControlCard({
+    required this.fanName,
+    required this.fanIcon,
+    required this.fanStatus,
+    required this.onTap,
+  });
+  @override
+  
