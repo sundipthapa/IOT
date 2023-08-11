@@ -136,7 +136,8 @@ class WaterPumpControlCard extends StatelessWidget {
                 size: 60.0,
                 color: pumpStatus ? Colors.blueAccent : Colors.grey[400],
               ),
-            
+              SizedBox(height: 8.0),
+              
             ],
           ),
         ),
