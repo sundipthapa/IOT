@@ -126,4 +126,20 @@ class WaterPumpControlCard extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
         ),
-       
+        child: InkWell(
+          onTap: onTap,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              FaIcon(
+                pumpIcon,
+                size: 60.0,
+                color: pumpStatus ? Colors.blueAccent : Colors.grey[400],
+              ),
+            
+            ],
+          ),
+        ),
+      ),
+    );
+  }
