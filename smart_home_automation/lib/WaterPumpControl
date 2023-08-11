@@ -24,3 +24,30 @@ class _WaterPumpControlPageState extends State<WaterPumpControlPage> {
       print('Error sending water pump status to Firebase: $error');
     }
   }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        centerTitle: true,
+        title: Text(
+          'Water Pump Control',
+          style: AppTheme.myGlobalTextStyle,
+        ),
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Color(0xFF7a6bbc),
+          ),
+          tooltip: 'Home',
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => MyHomePage(title: "HOME AUTOMATION"),
+              ),
+            );
+          },
+        ),
+      ),
