@@ -12,3 +12,11 @@ class LightControlPage extends StatefulWidget {
   @override
   State<LightControlPage> createState() => _LightControlPageState();
 }
+
+class _LightControlPageState extends State<LightControlPage> {
+  bool kitchenLightOn = false;
+  bool bedroomLightOn = false;
+  bool meetingLightOn = false;
+  String kitchenLight = 'OFF';
+  String bedroomLight = 'OFF';
+  String meetingLight = 'OFF';
