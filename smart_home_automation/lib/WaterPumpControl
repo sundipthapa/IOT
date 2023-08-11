@@ -9,3 +9,18 @@ class WaterPumpControlPage extends StatefulWidget {
   @override
   State<WaterPumpControlPage> createState() => _WaterPumpControlPageState();
 }
+class _WaterPumpControlPageState extends State<WaterPumpControlPage> {
+  bool waterPumpOn = false;
+  String waterPump = 'OFF';
+  void sendWaterPumpStatusToFirebase(String status) {
+    DatabaseReference databaseReference = FirebaseDatabase.instance
+        .reference()
+        .child('WaterPumpControl')
+        .child('WaterPumpStatus');
+    try {
+      databaseReference.set(status);
+      print("success");
+    } catch (error) {
+      print('Error sending water pump status to Firebase: $error');
+    }
+  }
