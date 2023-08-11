@@ -100,7 +100,10 @@ class _WaterPumpControlPageState extends State<WaterPumpControlPage> {
             ),
           ),
         ],
-
+    ),
+    );
+  }
+}
 class WaterPumpControlCard extends StatelessWidget {
   final String pumpName;
   final IconData pumpIcon;
@@ -112,3 +115,4 @@ class WaterPumpControlCard extends StatelessWidget {
     required this.pumpStatus,
     required this.onTap,
   });
+
