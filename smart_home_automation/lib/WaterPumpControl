@@ -100,3 +100,15 @@ class _WaterPumpControlPageState extends State<WaterPumpControlPage> {
             ),
           ),
         ],
+
+class WaterPumpControlCard extends StatelessWidget {
+  final String pumpName;
+  final IconData pumpIcon;
+  final bool pumpStatus;
+  final VoidCallback onTap;
+  const WaterPumpControlCard({
+    required this.pumpName,
+    required this.pumpIcon,
+    required this.pumpStatus,
+    required this.onTap,
+  });
