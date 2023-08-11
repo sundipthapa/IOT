@@ -138,3 +138,29 @@ class FanControlCard extends StatelessWidget {
                 color: fanStatus ? Colors.amber : Colors.grey[400],
               ),
              
+ SizedBox(height: 8.0),
+              Text(
+                fanName,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  color: fanStatus ? Colors.yellow : Colors.white,
+                ),
+              ),
+              SizedBox(height: 4.0),
+              Text(
+                fanStatus ? 'ON' : 'OFF',
+                style: TextStyle(
+                  fontSize: 15,
+                  color: fanStatus ? Colors.green : Colors.red,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
